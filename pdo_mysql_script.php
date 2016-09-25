@@ -71,13 +71,13 @@ the $ERR_MODES array. Valid values are "SILENT" or 0, "WARNING" or 1, "EXCEPTION
 		}
 		else{ throw new Exception("Unknown err_mode given.");}
 		}
-		catch(Exception $e){handle_exception($e);}
+		catch(Exception $e){PDO_handle_exception($e);}
 		return false;
 	}
 /*
 Resumes normal error mode determination, displaying, and exception throwing.
 */
-	function set_err_mode_default(){
+	function PDO_set_err_mode_default(){
 		global $USER_SET_ERR_MODE;
 		$USER_SET_ERR_MODE = false;
 		reconnect();
@@ -109,7 +109,7 @@ $database = name of the database.
 			$DB->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
 			return true;
 		}
-		catch(Exception $e){handle_exception($e);}
+		catch(Exception $e){PDO_handle_exception($e);}
 		return false;
 	}
 /*
@@ -204,7 +204,7 @@ $array_type = NUM, ASSOC or BOTH. Defaults to ASSOC
 		}
 		return $valuesOUT;
 		}
-		catch(Exception $e){handle_exception($e);}
+		catch(Exception $e){PDO_handle_exception($e);}
 		return false;
 	}
 /*
@@ -237,7 +237,7 @@ $array_type = NUM, ASSOC or BOTH. Defaults to ASSOC
 		}
 		return $valuesOUT;
 		}
-		catch(Exception $e){handle_exception($e);}
+		catch(Exception $e){PDO_handle_exception($e);}
 		return false;
 	}
 /*
@@ -286,7 +286,7 @@ $result_set = a result set returned by either PDO_query_prepared() or PDO_query(
 For internal use.
 Handles exceptions based on the ERR_MODE.
 */
-	function handle_exception($e){
+	function PDO_handle_exception($e){
 		global $TESTING, $ERR_MODE, $USER_SET_ERR_MODE;
 		if($TESTING) echo $e;
 		else if($USER_SET_ERR_MODE && $ERR_MODE > 0) throw $e;
