@@ -1,6 +1,6 @@
 # PDO_MySQL PHP class
 Author: Ryan Conklin  
-Date: 9/22/2016  
+Date: 9/29/2016  
 Email: [rwc4@pct.edu](mailto:rwc4@pct.edu)  
 Repository: [https://github.com/ryanc16/PHP-PDO_MySQL](https://github.com/ryanc16/PHP-PDO_MySQL)  
 Original filename: pdo_mysql_class.php  
