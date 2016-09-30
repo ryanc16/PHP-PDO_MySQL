@@ -6,7 +6,7 @@
 *	Email:				rwc4@pct.edu
 *	Repository:			https://github.com/ryanc16/PHP-PDO_MySQL
 *	Original filename:	pdo_mysql_class.php
-*	Version:			1.0
+*	Version:			1.0.1
 *	Description: This is a PDO based, easy to use class that aims to be a nearly drop-in replacement 
 *	for mysqli_* functions that allows for a more secure interaction with a MySQL database in a website
 *	or web application that runs PHP. This will allow anyone to develop applications
@@ -143,8 +143,10 @@ $hostname = url/address of database server.
 */
 	public function change_host($hostname){
 		if(isset($this->DB)) unset($this->DB);
-		if(!isset($this->DB) && $this->HOSTNAME = $hostname)
+		if(!isset($this->DB)){
+			$this->HOSTNAME = $hostname;
 			return true;
+		}
 		else return false;
 	}
 /*
@@ -155,8 +157,11 @@ $password = password for the user.
 */
 	public function change_user($username,$password){
 		if(isset($this->DB)) unset($this->DB);
-		if(!isset($this->DB) && $this->USERNAME = $username && $this->PASSWORD = $password)
+		if(!isset($this->DB)){
+			$this->USERNAME = $username;
+			$this->PASSWORD = $password;
 			return true;
+		}
 		else return false;
 	}
 /*
@@ -166,8 +171,11 @@ $database = name of the database.
 */
 	public function change_database($database){
 		if(isset($this->DB)) unset($this->DB);
-		if(!isset($this->DB) && $this->DATABASE = $database)
+		if(!isset($this->DB)){
+			$this->DATABASE = $database;
 			return true;
+		}
+			
 		else return false;
 	}
 /*

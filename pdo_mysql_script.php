@@ -6,7 +6,7 @@
 *	Email:				rwc4@pct.edu
 *	Repository:			https://github.com/ryanc16/PHP-PDO_MySQL
 *	Original filename:	pdo_mysql_script.php
-*	Version: 			1.0
+*	Version: 			1.0.1
 *	Description: This is a PDO based, easy to use, nearly drop-in replacement for mysqli_* 
 *	functions that allows for a more secure interaction with a MySQL database in a website
 *	or web application that runs PHP. This will allow anyone to develop applications
@@ -136,8 +136,10 @@ $hostname = url/address of database server.
 	function PDO_change_host($hostname){
 		global $DB, $HOSTNAME;
 		if(isset($DB)) unset($DB);
-		if(!isset($DB) && $HOSTNAME = $hostname)
+		if(!isset($DB)){
+			$HOSTNAME = $hostname;
 			return true;
+		}
 		else return false;
 	}
 /*
@@ -149,8 +151,12 @@ $password = password for the user.
 	function PDO_change_user($username,$password){
 		global $DB, $USERNAME, $PASSWORD;
 		if(isset($DB)) unset($DB);
-		if(!isset($DB) && $USERNAME = $username && $PASSWORD = $password)
+		if(!isset($DB)){
+			$USERNAME = $username;
+			$PASSWORD = $password;
 			return true;
+		}
+			
 		else return false;
 	}
 /*
@@ -161,8 +167,10 @@ $database = name of the database.
 	function PDO_change_database($database){
 		global $DB, $DATABASE;
 		if(isset($DB)) unset($DB);
-		if(!isset($DB) && $DATABASE = $database)
+		if(!isset($DB)){
+		 	$DATABASE = $database;
 			return true;
+		}
 		else return false;
 	}
 /*

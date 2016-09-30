@@ -4,8 +4,8 @@ Date: 9/22/2016
 Email: [rwc4@pct.edu](mailto:rwc4@pct.edu)  
 Repository: [https://github.com/ryanc16/PHP-PDO_MySQL](https://github.com/ryanc16/PHP-PDO_MySQL)  
 Original filename: pdo_mysql_class.php  
-File Version: 1.0  
-Documentation Version: 1.0.1
+File Version: 1.0.1  
+Documentation Version: 1.0.2
 
 ## Description
 This is a PDO based, easy to use class that aims to be a nearly drop-in replacement for mysqli_* functions that allows for a more secure interaction with a MySQL database in a website or web application that runs PHP. This will allow anyone to develop applications that utilize a MySQL database to have access to prepared statements and the accompanying functionality that is needed in order to build their application with a security-oriented approach.  
@@ -94,7 +94,7 @@ ___
 PDO_MySQL static function create_connection(string $host, string $user, string $pass, string $database)
 ```
 #### Description
-A static constructor that internally calls the `connect` method. Can be used for quickly creating a new PDO_MySQL object with an active database connection.
+A static constructor that internally calls the [`connect`](#connect) method. Can be used for quickly creating a new PDO_MySQL object with an active database connection.
 #### Parameters
 `$host` - url/address of database server.  
 `$user` - username of database user.  
